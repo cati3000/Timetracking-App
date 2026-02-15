@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { PtoService, PtoRequest } from './pto.service';
-import { LogApiService } from '../log-api.service';
+import { LogApiService } from '../../services/log-api.service';
 import { of, throwError } from 'rxjs';
 
 describe('PtoService', () => {

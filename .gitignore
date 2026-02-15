@@ -4,6 +4,8 @@
 /tmp
 /out-tsc
 /bazel-out
+/dist
+/frontend/dist
 
 # Node
 /node_modules
@@ -41,3 +43,4 @@ testem.log
 Thumbs.db
 
 techtreck-learning/*
+learning/*

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { LogApiService, LogEntry, PtoRequest } from './log-api.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { API_BASE } from '../api-base';
+import { API_BASE } from '../../config/api-base';
 
 describe('LogApiService', () => {
   let service: LogApiService;

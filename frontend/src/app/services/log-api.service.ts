@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { API_BASE } from '../api-base';
+import { API_BASE } from '../../config/api-base';
 
 export interface LogEntry {
   date: Date;

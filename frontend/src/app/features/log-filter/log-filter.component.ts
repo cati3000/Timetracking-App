@@ -9,7 +9,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { LogApiService } from '../log-api.service'; // Import the service
+import { LogApiService } from '../../services/log-api.service'; // Import the service
 import { forkJoin } from 'rxjs'; // Add this import
 import { HttpClientModule } from '@angular/common/http';
 

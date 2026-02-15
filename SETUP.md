@@ -5,7 +5,7 @@
 ### Prerequisites
 - Java 21 or higher
 - Maven
-- PostgreSQL (optional for local) or AWS RDS account
+- PostgreSQL (optional for local) or GCP Cloud SQL account
 
 ### Quick Start - Option 1: H2 In-Memory Database (Easiest)
 
@@ -248,8 +248,6 @@ Import these endpoints into Postman:
 - Check credentials are correct
 - For Cloud SQL: ensure authorized networks include your IP
 - Test connection: `psql -h DB_HOST -U DB_USERNAME -d DB_NAME`
-- For RDS: ensure security group allows your IP
-- Test connection: `psql -h DB_HOST -U DB_USERNAME -d DB_NAME`
 
 ### Validation errors
 - Check request body format matches API documentation
@@ -290,10 +288,12 @@ projecte/
 1. ✅ Backend is complete with all CRUD operations
 2. ✅ Server-side validation implemented
 3. ✅ Exception handling configured
-4. ✅ AWS RDS support ready
-5. ⏭️ Update Angular API_BASE to local backend
-6. ⏭️ Test all operations
-7. ⏭️ Deploy to AWS
-8. ⏭️ Push to GitHub
+4. ✅ GCP Cloud SQL support ready
+5. ✅ Frontend reorganized with clean architecture
+6. ✅ CMS and learning resources properly structured
+7. ⏭️ Update Angular API_BASE to your backend URL
+8. ⏭️ Test all operations
+9. ⏭️ Deploy to GCP (Cloud Run, Compute Engine, or GKE)
+10. ⏭️ Configure production environment variables
 
 Good luck with your deployment! 🚀
