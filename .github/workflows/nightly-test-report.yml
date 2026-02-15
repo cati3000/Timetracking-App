@@ -1,0 +1,89 @@
+name: Nightly Test Report
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        id: test
+        continue-on-error: true
+        run: |
+          npm test -- --watch=false --browsers=ChromeHeadless | tee test-output.txt
+
+      - name: Get last 30 lines of test output
+        id: tail
+        run: |
+          tail -n 30 test-output.txt > last30.txt
+          echo "result<<EOF" >> $GITHUB_OUTPUT
+          cat last30.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Collect failed tests
+        id: failed
+        run: |
+          grep -A 1000 -E 'FAIL ' test-output.txt > failed-tests.txt || echo "No failed tests" > failed-tests.txt
+          echo "result<<EOF" >> $GITHUB_OUTPUT
+          cat failed-tests.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Comment on Nightly Test Report issue
+        if: always()
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: 1 # Change to your issue number
+          body: |
+            ### Nightly Test Report
+            **Status:** ${{ job.status }}
+            **Run:** [View workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            **Test output (last 30 lines):**
+            ```
+            ${{ steps.tail.outputs.result }}
+            ```
+
+            **Failed tests:**
+            ```
+            ${{ steps.failed.outputs.result }}
+            ```
+
+      - name: Send report by email
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Nightly Test Report - ${{ github.repository }}"
+          to: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: |
+            Nightly Test Report
+            Status: ${{ job.status }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Test output (last 30 lines):
+            ${{ steps.tail.outputs.result }}
+
+            Failed tests:
+            ${{ steps.failed.outputs.result }}
