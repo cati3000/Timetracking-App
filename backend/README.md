@@ -1,6 +1,6 @@
 # Time Tracking Backend - Spring Boot
 
-A Spring Boot backend application for the Time Tracking Angular application with AWS RDS PostgreSQL database support.
+A Spring Boot backend application for the Time Tracking Angular application with GCP Cloud SQL PostgreSQL database support.
 
 ## Features
 
@@ -16,7 +16,7 @@ A Spring Boot backend application for the Time Tracking Angular application with
 - **Java 21**
 - **Spring Boot 4.0.0**
 - **Spring Data JPA**
-- **PostgreSQL** (AWS RDS) or **H2** (local)
+- **PostgreSQL** (GCP Cloud SQL) or **H2** (local)
 - **Lombok**
 - **Bean Validation**
 

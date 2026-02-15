@@ -463,8 +463,3 @@ pg_dump -h localhost -U postgres timetracking > backup.sql
 8. ✅ Set up monitoring and alerts
 
 Need help? Check GCP Cloud SQL documentation: https://cloud.google.com/sql/docs
-5. ✅ Run application locally with RDS
-6. ✅ Deploy to production
-7. ✅ Set up monitoring and alerts
-
-Need help? Check AWS RDS documentation: https://docs.aws.amazon.com/rds/
