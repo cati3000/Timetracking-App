@@ -1,27 +1,63 @@
-# TimeTrackerApp
+# Timetracking App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+A full-stack time tracking and PTO management application with an Angular frontend, Spring Boot backend, and Strapi CMS.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Timetracking App is a comprehensive employee time management system designed to help track work hours, manage paid time off (PTO), and filter activity logs. The application features a modern responsive interface, AI-powered chatbot assistance, and robust backend API with database support.
 
-## Code scaffolding
+## Architecture
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project is organized into three main components:
 
-## Build
+- **Frontend**: Angular 17 single-page application with Material Design UI
+- **Backend**: Spring Boot 4.0 RESTful API with PostgreSQL database
+- **CMS**: Strapi 5.15 headless CMS for content management
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technology Stack
 
-## Running unit tests
+### Frontend
+- Angular 17.3
+- TypeScript 5.4
+- Angular Material 17.3 for UI components
+- RxJS 7.8 for reactive programming
+- OpenAI 4.11 for AI chatbot integration
+- Karma and Jasmine for testing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Backend
+- Java 21
+- Spring Boot 4.0
+- Spring Data JPA for database operations
+- Spring Validation for input validation
+- PostgreSQL for production database
+- H2 in-memory database for local development
+- Lombok for code generation
 
-## Running end-to-end tests
+### CMS
+- Strapi 5.15
+- React 18 for admin interface
+- TypeScript 5
+- Node.js 18-22
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Additional Services
+- GCP Cloud SQL for PostgreSQL database hosting
+- GitHub Pages for deployment
+- GitHub Actions for CI/CD automation
+- Render for backend deployment options
 
-## Further help
+## Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Time entry tracking with date, duration, and description
+- PTO (Paid Time Off) management and approval workflow
+- Activity log filtering and search
+- AI-powered chatbot assistance powered by OpenAI
+- Dark theme support
+- Responsive design for desktop and mobile
+- Real-time data synchronization
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+ and npm 6+
+- Java 21 (for backend)
+- PostgreSQL 15+ (for production)
