@@ -1,18 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { LogFilterComponent } from './log-filter.component';
+import { PtoComponent } from './pto.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { LogApiService } from '../log-api.service';
+import { LogApiService } from '../../services/log-api.service';
 
-describe('LogFilterComponent', () => {
+describe('PtoComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [LogFilterComponent, HttpClientTestingModule], // Standalone + HttpClientTestingModule
+      imports: [PtoComponent, HttpClientTestingModule], // Standalone + HttpClientTestingModule
       providers: [LogApiService],
     });
   });
 
   it('should create', () => {
-    const fixture = TestBed.createComponent(LogFilterComponent);
+    const fixture = TestBed.createComponent(PtoComponent);
     const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });

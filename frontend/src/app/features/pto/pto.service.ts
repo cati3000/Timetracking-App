@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { LogApiService } from '../log-api.service';
+import { LogApiService } from '../../services/log-api.service';
 
 export interface PtoRequest {
   ptoDate: string;

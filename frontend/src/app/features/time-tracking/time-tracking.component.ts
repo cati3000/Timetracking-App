@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
-import { LogApiService } from '../log-api.service';
+import { LogApiService } from '../../services/log-api.service';
 
 @Component({
   selector: 'app-time-tracking',
